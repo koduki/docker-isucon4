@@ -1,18 +1,14 @@
 README
 ==================
 
-ISUCON4 for docker.
+[ISUCON4 ISUCON-BANK](https://github.com/isucon/isucon4/tree/master/qualifier) for docker.
 
-Build
-------------------
-
-```bash
-$ docker build -t koduki/isucon4 .
-```
+Thank you ISUCON4
+https://github.com/isucon/isucon4
 
 Run
 ------------------
 
 ```bash
-$ docker run -it koduki/isucon4 /bin/bash
+$ docker-compose up
 ```

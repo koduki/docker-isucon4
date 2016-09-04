@@ -1,17 +1,17 @@
 app:
-  build: ./app/
+  build: ./dockerfiles/app/
   ports:
     - "8080:8080"
   links:
     - db:db
 db:
-  build: ./db/
+  image: koduki/isu4_qualifier_db
   ports:
     - "3306:3306"
   environment:
     - MYSQL_ROOT_PASSWORD=admin
 web:
-  build: ./web/
+  build: ./dockerfiles/web/
   ports:
     - "80:80"
   links:

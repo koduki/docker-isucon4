@@ -1,6 +1,6 @@
 FROM centos
 
-# Base settings
+# Install base settings
 RUN yum update -y && yum install -y \
  sudo \
  wget \
@@ -8,23 +8,16 @@ RUN yum update -y && yum install -y \
  python \
  gcc \
  make \
- git 
+ git && \
+yum clean all
 
-
-# install ruby
-RUN yum install -y \
+# Install ruby
+RUN yum update -y && yum install -y \
  ruby \
- ruby-devel
-
+ ruby-devel \
+ mariadb-devel && \
+yum clean all
 RUN gem install bundler
-
-
-# middle
-RUN yum install -y \
- nginx \
- mariadb-server \
- mariadb-devel
-
 
 # apps
 RUN git clone --depth 1 https://github.com/isucon/isucon4.git
