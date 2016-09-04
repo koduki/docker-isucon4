@@ -10,3 +10,9 @@ db:
     - "3306:3306"
   environment:
     - MYSQL_ROOT_PASSWORD=admin
+web:
+  build: ./web/
+  ports:
+    - "80:80"
+  links:
+    - app:app
