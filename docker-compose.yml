@@ -1,4 +1,12 @@
 app:
-  build: .
+  build: ./app/
   ports:
     - "8080:8080"
+  links:
+    - db:db
+db:
+  build: ./db/
+  ports:
+    - "3306:3306"
+  environment:
+    - MYSQL_ROOT_PASSWORD=admin
