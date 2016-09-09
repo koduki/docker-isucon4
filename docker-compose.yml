@@ -5,7 +5,7 @@ app:
   links:
     - db:db
 db:
-  image: koduki/isu4_qualifier_db
+  build: ./dockerfiles/db/
   ports:
     - "3306:3306"
   environment:
