@@ -1,17 +1,17 @@
 app:
-  build: ./dockerfiles/app/
+  image: koduki/example-isuconbank-app
   ports:
     - "8080:8080"
   links:
     - db:db
 db:
-  image: koduki/isu4_qualifier_db
+  image: koduki/example-isuconbank-db
   ports:
     - "3306:3306"
   environment:
     - MYSQL_ROOT_PASSWORD=admin
 web:
-  build: ./dockerfiles/web/
+  image: koduki/example-isuconbank-web
   ports:
     - "80:80"
   links:
